@@ -32,6 +32,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTHENTICATION_BACKENDS = [
+    'users.views.CustomeBackend',
+]
 
 # Application definition
 
@@ -92,8 +95,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline2',
         'USER': 'root',
-        'PASSWORD': 'pacs',
-        'HOST': '127.0.0.1'
+        # 'PASSWORD': 'pacs',
+        # 'HOST': '127.0.0.1'
+        'PASSWORD': '123456',
+        'HOST': '172.16.111.133'
     }
 }
 

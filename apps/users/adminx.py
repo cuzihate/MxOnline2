@@ -17,6 +17,7 @@ class BaseSettings(object):
 class GlobalSettings(object):
     site_title = '虎哥哥的小木屋'
     site_footer = '虎哥在线'
+    menu_style = 'accordion'
 
 
 class EmailVerifyRecordAdmin(object):
