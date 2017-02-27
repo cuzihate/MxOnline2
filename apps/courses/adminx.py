@@ -6,6 +6,7 @@ from .models import Course, Lesson, Video, CourseResource
 
 import xadmin
 
+
 class CourseAdmin(object):
     list_display = ['name', 'desc', 'detail', 'degree', 'learn_times', 'students', 'fav_nums', 'click_nums', 'add_time']
     search_fields = ['name', 'desc', 'detail', 'degree', 'students', 'fav_nums', 'click_nums']

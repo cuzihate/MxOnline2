@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 AUTHENTICATION_BACKENDS = [
     'users.views.CustomeBackend',
 ]
+# 自定义auth认证
 
 # Application definition
 
@@ -51,6 +52,8 @@ INSTALLED_APPS = [
     'operation',
     'xadmin',
     'crispy_forms',
+    'captcha',
+    'pure_pagination',
 ]
 AUTH_USER_MODEL = 'users.UserProfile'
 
@@ -79,6 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.media',
             ],
         },
     },
@@ -95,10 +99,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline2',
         'USER': 'root',
-        # 'PASSWORD': 'pacs',
-        # 'HOST': '127.0.0.1'
-        'PASSWORD': '123456',
-        'HOST': '172.16.111.133'
+        'PASSWORD': 'pacs',
+        'HOST': '127.0.0.1'
+        # 'PASSWORD': '123456',
+        # 'HOST': '172.16.111.133'
     }
 }
 
@@ -146,3 +150,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'aizhaohu@163.com'
+EMAIL_HOST_PASSWORD = '57XB54ZHqqcom'
+EMAIL_FROM = 'aizhaohu@163.com'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
